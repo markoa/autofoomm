@@ -7,7 +7,7 @@ MainWindow::MainWindow()
 {
   set_border_width(10);
 
-  m_button.signal_clicked().connect(sigc::mem_fun(*this,
+  button_.signal_clicked().connect(sigc::mem_fun(*this,
               &MainWindow::on_button_clicked));
 
   add(button_);

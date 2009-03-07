@@ -6,7 +6,9 @@ AM_CXXFLAGS = -Wall -Wextra \
 bin_PROGRAMS = autofoomm
 
 autofoomm_SOURCES = \
-	main.cc
+	main.cc \
+	main-window.cc \
+	main-window.hh
 
 global_defines = \
   -DPREFIX=\""$(prefix)"\" \

@@ -8,16 +8,9 @@ main(int argc, char** argv)
 {
     Gtk::Main kit(argc, argv);
 
-    MainWindow* main_window = 0;
+    MainWindow main_window;
 
-    main_window = MainWindow::create();
-
-    try {
-        if (main_window) kit.run(*main_window); 
-        delete main_window;
-    } catch (const std::exception& ex) {
-        std::cerr << ex.what() << std::endl;
-    }
+    Gtk::Main::run(main_window);
 
     return 0;
 }
