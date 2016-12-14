@@ -1,25 +1,29 @@
-
-#include <iostream>
 #include "main-window.hh"
+#include <iostream>
 
-MainWindow::MainWindow()
-: button_("Click me")
+HelloWorld::HelloWorld()
+: m_button("Hello World")   // creates a new button with label "Hello World".
 {
+  // Sets the border width of the window.
   set_border_width(10);
 
-  button_.signal_clicked().connect(sigc::mem_fun(*this,
-              &MainWindow::on_button_clicked));
+  // When the button receives the "clicked" signal, it will call the
+  // on_button_clicked() method defined below.
+  m_button.signal_clicked().connect(sigc::mem_fun(*this,
+              &HelloWorld::on_button_clicked));
 
-  add(button_);
+  // This packs the button into the Window (a container).
+  add(m_button);
 
-  show_all_children();
+  // The final step is to display this newly created widget...
+  m_button.show();
 }
 
-MainWindow::~MainWindow()
+HelloWorld::~HelloWorld()
 {
 }
 
-void MainWindow::on_button_clicked()
+void HelloWorld::on_button_clicked()
 {
-  std::cout << "Ok, you really did click" << std::endl;
+  std::cout << "Hello World" << std::endl;
 }
