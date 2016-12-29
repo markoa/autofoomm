@@ -1,20 +1,22 @@
-
-#ifndef __AUTOFOOMM_MAIN_WINDOW__
-#define __AUTOFOOMM_MAIN_WINDOW__
+#ifndef GTKMM_EXAMPLE_HELLOWORLD_H
+#define GTKMM_EXAMPLE_HELLOWORLD_H
 
 #include <gtkmm/button.h>
 #include <gtkmm/window.h>
 
-class MainWindow : public Gtk::Window
+class HelloWorld : public Gtk::Window
 {
+
 public:
-    MainWindow();
-    virtual ~MainWindow();
+  HelloWorld();
+  virtual ~HelloWorld();
 
 protected:
-    virtual void on_button_clicked();
+  //Signal handlers:
+  void on_button_clicked();
 
-    Gtk::Button button_;
+  //Member widgets:
+  Gtk::Button m_button;
 };
 
-#endif // __AUTOFOOMM_MAIN_WINDOW__
+#endif // GTKMM_EXAMPLE_HELLOWORLD_H

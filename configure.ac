@@ -2,6 +2,8 @@
 AC_INIT([Autofoomm], [0.1], [marko@renderedtext.com], [autofoomm])
 AC_PREREQ(2.59)
 
+AC_CONFIG_MACRO_DIR([m4])
+
 AC_CONFIG_SRCDIR([src/main.cc])
 
 AC_CONFIG_HEADER([config.h])
@@ -13,10 +15,6 @@ ACLOCAL="$ACLOCAL $ACLOCAL_FLAGS"
 AC_ISC_POSIX
 AC_PROG_CXX
 AC_PROG_CC
-
-GNOME_CXX_WARNINGS
-GNOME_DEBUG_CHECK
-GNOME_MAINTAINER_MODE_DEFINES
 
 # *************************************
 # Compiler and platform check
@@ -47,7 +45,7 @@ AC_LANG_CPLUSPLUS
 # *************************************
 # Library checks
 # *************************************
-PKG_CHECK_MODULES([GTKMM], [gtkmm-2.4 >= 2.14.0])
+PKG_CHECK_MODULES([GTKMM], [gtkmm-3.0 >= 3.0.0])
 AC_SUBST([GTKMM_CFLAGS])
 AC_SUBST([GTKMM_LIBS])
 
